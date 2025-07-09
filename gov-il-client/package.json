@@ -8,7 +8,11 @@
         "build": "tsc -b && vite build",
         "lint": "eslint .",
         "preview": "vite preview",
-        "update-flight-model": "node ./update-scripts/flight.js flight"
+        "###########################":"update scripts ################################",
+        "update-flight-model": "node ./update-scripts/update.js flight",
+        "update-cars-model": "node ./update-scripts/update.js car",
+        "update-ca-model": "node ./update-scripts/update.js ca",
+        "update-all": "npm run update-flight-model && npm run update-cars-model && npm run update-ca-model"
     },
     "dependencies": {
         "@emotion/react": "^11.14.0",
