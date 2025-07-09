@@ -101,3 +101,7 @@ celcom-200 partner-100 etc..
 # 9/7/2025
 1. support update model script for Cars
 2. consider using param OR updating all the models together
+
+
+3. Support DDL with values: 10 | 20 | 30 | 40 | 50 result to limit the number of items from the api 
+4. Support new report Factories per Machuz 
