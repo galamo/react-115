@@ -10,10 +10,9 @@ if(!param){
 const resourceMap = {
     "flight": "e83f763b-b7d7-479e-b172-ae981ddc6de5",
     "car": "053cea08-09bc-40ec-8f7a-156f0677aff3",
-    "ca": "053cea08-09bc-40ec-8f7a-156f0677aff3"
+    "factory": "88d1883c-3b7a-4580-9be9-6d54659666c3"
 }
 
-// https://data.gov.il/api/3/action/datastore_search?resource_id=8935c8e5-ec77-421f-af86-d970583195f8&limit=5
 
 updateModel(resourceMap[param])
 
