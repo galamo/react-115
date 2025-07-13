@@ -16,8 +16,8 @@ export type FactoryClient = {
     locationY: string,
 }
 
-export async function getFactoriesApi(): Promise<Array<Partial<FactoryClient>>> {
-    const result = await axios.get<{ result: { records: Array<FactoryApi> } }>(`${url}&limit=${30}`)
+export async function getFactoriesApi(limit: number): Promise<Array<Partial<FactoryClient>>> {
+    const result = await axios.get<{ result: { records: Array<FactoryApi> } }>(`${url}&limit=${limit}`)
     const data = result?.data?.result?.records
     return data.map(f => {
         return {
