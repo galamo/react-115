@@ -109,3 +109,9 @@ celcom-200 partner-100 etc..
 
 # 13/7 
 1. support lazy loading in all of your routes - component level route only
+
+2. create a "HeavyPage" route, that should load 2 components, 
+<HeavyCalender></HeavyCalender>
+and
+<HeavyChart></HeavyChart>
+try to support loading both components in suspense
