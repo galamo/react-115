@@ -33,6 +33,9 @@ export default function ButtonAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link to="/factories">factories</Link>
           </Typography>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Link to="/heavy-route">Heavy</Link>
+          </Typography>
 
           <Button color="inherit">Login</Button>
         </Toolbar>
