@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import ButtonAppBar from "./components/appBar";
+import CarsFavoritesPage from "./components/pages/carsFavoritesPage";
 const LazyFactoryPage = lazy(() => import("./components/pages/factoriesPage"));
 const LazyHomePage = lazy(() => import("./components/pages/home"));
 const LazyCarsPage = lazy(() => import("./components/pages/carsPage"));
@@ -21,6 +22,7 @@ function App() {
             <Route path="/home" element={<LazyHomePage />} />
             <Route path="/flights" element={<LazyFlightsPage />} />
             <Route path="/cars" element={<LazyCarsPage />} />
+            <Route path="/cars-favorites" element={<CarsFavoritesPage />} />
             <Route path="/factories" element={<LazyFactoryPage />} />
             <Route path="/heavy-route" element={<LazyHeavyPage />} />
             <Route path="/heavy-list-page" element={<LazyHeavyListPage />} />

@@ -31,6 +31,10 @@ export default function ButtonAppBar() {
             <Link to="/cars">Cars</Link>
           </Typography>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Link to="/cars-favorites">Cars Favorites Page </Link>
+          </Typography>
+
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link to="/factories">factories</Link>
           </Typography>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>

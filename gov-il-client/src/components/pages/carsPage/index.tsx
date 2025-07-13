@@ -13,7 +13,7 @@ import { useRef, useState } from "react";
 import { getCarApi, type CarClient } from "./service/getCarApi";
 
 export type CarType = typeof carData;
-
+// connect to redux!
 export default function CarsPage() {
   const lpText = useRef<HTMLInputElement>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -32,6 +32,10 @@ export default function CarsPage() {
     } finally {
       setIsLoading(false);
     }
+  }
+
+  function handleCarEvent(cCar: CarClient) {
+    console.log(cCar);
   }
 
   return (
@@ -57,12 +61,16 @@ export default function CarsPage() {
           <Button onClick={handleLPsearch}> Search Car </Button>
         )}
       </div>
-      <div>{currentCar && <CarCard {...currentCar} />}</div>
+      <div>
+        {currentCar && (
+          <CarCard {...currentCar} sendCurrentObj={handleCarEvent} />
+        )}
+      </div>
     </div>
   );
 }
 
-function CarCard(props: CarClient) {
+function CarCard(props: CarClient & { sendCurrentObj: Function }) {
   return (
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
@@ -84,6 +92,14 @@ function CarCard(props: CarClient) {
       </CardContent>
       <CardActions>
         <Button size="small">{props.dateOfRelease}</Button>
+        <Button
+          size="large"
+          onClick={() => {
+            props.sendCurrentObj(props);
+          }}
+        >
+          Add To Favorites
+        </Button>
       </CardActions>
     </Card>
   );
