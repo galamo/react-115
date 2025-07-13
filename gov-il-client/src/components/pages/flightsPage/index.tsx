@@ -1,10 +1,9 @@
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
-import type { GridColDef, GridColumnVisibilityModel } from '@mui/x-data-grid';
+import type { GridColDef } from '@mui/x-data-grid';
 import data from "../../../types_def/flight.json"
 import { useEffect, useState } from 'react';
 import { getFlightsApi, type FlightClient } from './service/getFlightsApi';
-import { extractColumnsFromData } from './utils';
 import { Alert, Button } from '@mui/material';
 // import { extractColumnsFromData } from './utils';
 

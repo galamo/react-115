@@ -6,7 +6,7 @@ import { PieChart } from "@mui/x-charts/PieChart";
 import { getFactoriesReport } from "./utils";
 const limitsValues = [10, 20, 30, 40, 50];
 export default function FactoryPage() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [_, setIsLoading] = useState(false);
   const [factories, setFactories] = useState<Array<Partial<FactoryClient>>>([]);
   const [limitOfResults, setLimitOfResults] = useState(10);
 

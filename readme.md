@@ -105,3 +105,7 @@ celcom-200 partner-100 etc..
 
 3. Support DDL with values: 10 | 20 | 30 | 40 | 50 result to limit the number of items from the api 
 4. Support new report Factories per Machuz 
+
+
+# 13/7 
+1. support lazy loading in all of your routes - component level route only
