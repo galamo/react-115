@@ -115,3 +115,17 @@ celcom-200 partner-100 etc..
 and
 <HeavyChart></HeavyChart>
 try to support loading both components in suspense
+
+
+# 16/7
+1. support get user details in your application 
+2. use the API: http://localhost:2200/user-details
+3. create slice - usersSlice 
+4. create asyncThunk - action creator
+5. get the user details from the server
+6. store the response in the store
+7. try to support the permissions in the cars - add to favorites
+
+8. Run Api - navigate to nodejs.api folder & run 
+`npm install`
+`node index.js`
