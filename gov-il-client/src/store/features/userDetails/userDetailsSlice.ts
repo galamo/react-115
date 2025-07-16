@@ -10,8 +10,8 @@ const dummyData = {
   username: "na@gmail.com",
   permissions: { flights: ["read"], cars: ["read"] },
 };
-
-type UserDetails = { details: typeof dummyData } & { isLoading: boolean }; // I AM LAZY
+type ServerUserDetails = typeof dummyData;
+type UserDetails = { details: ServerUserDetails } & { isLoading: boolean }; // I AM LAZY
 
 const initialState: UserDetails = {
   details: {
