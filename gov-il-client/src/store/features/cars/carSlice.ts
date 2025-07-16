@@ -25,4 +25,5 @@ const carSlice = createSlice({
 
 const { addToFavorites } = carSlice.actions
 export { addToFavorites }
+
 export default carSlice.reducer 
