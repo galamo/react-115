@@ -1,13 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import carsReducers from "./features/cars/carSlice"
 import factoriesReducers from "./features/factories/factoriesSlice"
-
+import userDetailsReducers from "./features/userDetails/userDetailsSlice"
 import { useDispatch, useSelector } from "react-redux";
 
 export const store = configureStore({
     reducer: {
         cars: carsReducers,
-        f: factoriesReducers
+        f: factoriesReducers,
+        userDetails: userDetailsReducers
     }
 })
 

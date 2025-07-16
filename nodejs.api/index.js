@@ -64,7 +64,7 @@ app.get("/user-details", async (req, res, next) => {
         username: "na@gmail.com",
         permissions: {
             flights: ["read"],
-            cars: ["read"]
+            cars: ["read", "write"]
         }
     })
 });

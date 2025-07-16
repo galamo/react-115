@@ -21,8 +21,14 @@ export default function CarsPage() {
     const [isLoading, setIsLoading] = useState(false);
     const [currentCar, setCurrentCar] = useState<CarClient | null>(null);
     const data = useAppSelector(state => state.cars.carsForSale.length)
+    const details = useAppSelector(state => state.userDetails?.details)
+
     const dispatch = useAppDispatch()
 
+    const isAddToFavoritePermitted = Array.isArray(details?.permissions?.cars) &&
+        details?.permissions?.cars.some(item => item === "write")
+
+    console.log(isAddToFavoritePermitted, "permission", details)
     async function handleLPsearch() {
         try {
             setIsLoading(true);
@@ -85,14 +91,14 @@ export default function CarsPage() {
             </div>
             <div>
                 {currentCar && (
-                    <CarCard {...currentCar} sendCurrentObj={handleCarEvent} remove={handleCarEventRemove} />
+                    <CarCard showFavorites={isAddToFavoritePermitted} {...currentCar} sendCurrentObj={handleCarEvent} remove={handleCarEventRemove} />
                 )}
             </div>
         </div>
     );
 }
 
-function CarCard(props: CarClient & { sendCurrentObj: Function, remove: Function }) {
+function CarCard(props: CarClient & { sendCurrentObj: Function, remove: Function, showFavorites: boolean }) {
     return (
         <Card sx={{ minWidth: 275 }}>
             <CardContent>
@@ -114,14 +120,14 @@ function CarCard(props: CarClient & { sendCurrentObj: Function, remove: Function
             </CardContent>
             <CardActions>
                 <Button size="small">{props.dateOfRelease}</Button>
-                <Button
+                {props.showFavorites ? <Button
                     size="large"
                     onClick={() => {
                         props.sendCurrentObj(props);
                     }}
                 >
                     Add To Favorites
-                </Button>
+                </Button> : null}
                 <Button
                     size="large"
                     onClick={() => {
